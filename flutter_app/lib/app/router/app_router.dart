@@ -4,6 +4,7 @@ import '../../features/admin/presentation/screens/admin_dashboard_screen.dart';
 import '../../features/admin/presentation/screens/admin_dishes_screen.dart';
 import '../../features/admin/presentation/screens/admin_orders_screen.dart';
 import '../../features/admin/presentation/screens/admin_settings_screen.dart';
+import '../../features/auth/presentation/screens/auth_screen.dart';
 import '../../features/cart/presentation/screens/cart_screen.dart';
 import '../../features/catalog/presentation/screens/catalog_screen.dart';
 import '../../features/checkout/presentation/screens/checkout_screen.dart';
@@ -72,6 +73,29 @@ final appRouter = GoRouter(
     GoRoute(
       path: '/menu',
       redirect: (context, state) => '/catalog',
+    ),
+
+    // Customer Auth Routes (Same as Web Auth)
+    GoRoute(
+      path: '/auth',
+      name: 'auth',
+      builder: (context, state) {
+        final modeParam = state.uri.queryParameters['mode'];
+        final initialMode = modeParam == 'register'
+            ? AuthMode.register
+            : modeParam == 'verify'
+                ? AuthMode.verify
+                : AuthMode.login;
+        return AuthScreen(initialMode: initialMode);
+      },
+    ),
+    GoRoute(
+      path: '/login',
+      redirect: (context, state) => '/auth?mode=login',
+    ),
+    GoRoute(
+      path: '/register',
+      redirect: (context, state) => '/auth?mode=register',
     ),
 
     // Admin Portal Routes (All-in-One)

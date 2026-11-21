@@ -1,5 +1,6 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_app/core/network/dio_client.dart';
+import 'package:flutter_app/features/auth/presentation/providers/customer_auth_provider.dart';
 import 'package:flutter_app/features/cart/presentation/providers/cart_provider.dart';
 import 'package:flutter_app/features/orders/domain/entities/order_entity.dart';
 import 'package:flutter_app/features/orders/presentation/providers/orders_provider.dart';
@@ -7,7 +8,21 @@ import 'package:flutter_app/features/checkout/domain/models/checkout_models.dart
 
 class CheckoutNotifier extends Notifier<CheckoutState> {
   @override
-  CheckoutState build() => const CheckoutState();
+  CheckoutState build() {
+    final customerAuth = ref.watch(customerAuthProvider);
+    if (customerAuth.isAuthenticated && customerAuth.user != null) {
+      final user = customerAuth.user!;
+      return CheckoutState(
+        address: ShippingAddress(
+          name: user.name,
+          phone: user.phone.isNotEmpty ? user.phone : '012 889 977',
+          street: user.address.isNotEmpty ? user.address : 'ផ្ទះលេខ ១២, ផ្លូវ ២៧១',
+          city: 'Phnom Penh',
+        ),
+      );
+    }
+    return const CheckoutState();
+  }
 
   void updateAddress(ShippingAddress address) {
     state = state.copyWith(address: address);
@@ -37,6 +52,7 @@ class CheckoutNotifier extends Notifier<CheckoutState> {
       final dio = ref.read(dioProvider);
 
       final payload = {
+        'user_id': ref.read(customerAuthProvider).user?.id ?? 'guest',
         'items': items
             .map((item) => {
                   'product_id': item.productId,

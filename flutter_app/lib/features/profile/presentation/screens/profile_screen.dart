@@ -4,6 +4,7 @@ import 'package:go_router/go_router.dart';
 import '../../../../core/theme/app_theme.dart';
 import '../../../admin/presentation/providers/admin_provider.dart';
 import '../../../admin/presentation/screens/admin_login_dialog.dart';
+import '../../../auth/presentation/providers/customer_auth_provider.dart';
 import '../../../cart/presentation/providers/cart_provider.dart';
 import '../../../orders/presentation/providers/orders_provider.dart';
 import '../../../wishlist/presentation/providers/wishlist_provider.dart';
@@ -17,6 +18,7 @@ class ProfileScreen extends ConsumerWidget {
     final wishlist = ref.watch(wishlistProvider);
     final cart = ref.watch(cartProvider);
     final adminState = ref.watch(adminProvider);
+    final customerAuth = ref.watch(customerAuthProvider);
 
     return Scaffold(
       backgroundColor: AppTheme.backgroundColor,
@@ -27,6 +29,188 @@ class ProfileScreen extends ConsumerWidget {
         padding: const EdgeInsets.all(16),
         child: Column(
           children: [
+            // Customer Authentication Card (Login / Register / Profile)
+            if (!customerAuth.isAuthenticated)
+              Container(
+                padding: const EdgeInsets.all(16),
+                margin: const EdgeInsets.only(bottom: 16),
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.circular(20),
+                  border: Border.all(color: AppTheme.borderColor),
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.black.withValues(alpha: 0.03),
+                      blurRadius: 10,
+                      offset: const Offset(0, 3),
+                    ),
+                  ],
+                ),
+                child: Row(
+                  children: [
+                    Container(
+                      width: 50,
+                      height: 50,
+                      decoration: BoxDecoration(
+                        color: const Color(0xFFF1F5F9),
+                        shape: BoxShape.circle,
+                        border: Border.all(color: const Color(0xFFCBD5E1)),
+                      ),
+                      child: const Icon(Icons.person_outline, color: AppTheme.textMuted, size: 28),
+                    ),
+                    const SizedBox(width: 14),
+                    Expanded(
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: const [
+                          Text(
+                            'គណនីអតិថិជន (Customer)',
+                            style: TextStyle(fontWeight: FontWeight.bold, fontSize: 14.5, color: AppTheme.textDark),
+                          ),
+                          SizedBox(height: 2),
+                          Text(
+                            'ចូលគណនី ឬចុះឈ្មោះដើម្បីកុម្ម៉ង់អាហារ',
+                            style: TextStyle(color: AppTheme.textMuted, fontSize: 11.5),
+                          ),
+                        ],
+                      ),
+                    ),
+                    ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: AppTheme.primaryColor,
+                        foregroundColor: Colors.white,
+                        padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 9),
+                        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+                        elevation: 0,
+                      ),
+                      onPressed: () => context.push('/auth'),
+                      child: const Text('ចូល / ចុះឈ្មោះ', style: TextStyle(fontSize: 12, fontWeight: FontWeight.bold)),
+                    ),
+                  ],
+                ),
+              )
+            else
+              Container(
+                padding: const EdgeInsets.all(16),
+                margin: const EdgeInsets.only(bottom: 16),
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.circular(20),
+                  border: Border.all(color: AppTheme.primaryColor.withValues(alpha: 0.3)),
+                  boxShadow: [
+                    BoxShadow(
+                      color: AppTheme.primaryColor.withValues(alpha: 0.04),
+                      blurRadius: 10,
+                      offset: const Offset(0, 3),
+                    ),
+                  ],
+                ),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Row(
+                      children: [
+                        Container(
+                          width: 52,
+                          height: 52,
+                          decoration: BoxDecoration(
+                            color: AppTheme.primaryColor,
+                            shape: BoxShape.circle,
+                            boxShadow: [
+                              BoxShadow(
+                                color: AppTheme.primaryColor.withValues(alpha: 0.25),
+                                blurRadius: 6,
+                                offset: const Offset(0, 2),
+                              ),
+                            ],
+                          ),
+                          child: Center(
+                            child: Text(
+                              customerAuth.user?.name.isNotEmpty == true
+                                  ? customerAuth.user!.name[0].toUpperCase()
+                                  : 'U',
+                              style: const TextStyle(color: Colors.white, fontSize: 22, fontWeight: FontWeight.bold),
+                            ),
+                          ),
+                        ),
+                        const SizedBox(width: 14),
+                        Expanded(
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Row(
+                                children: [
+                                  Flexible(
+                                    child: Text(
+                                      customerAuth.user?.name ?? 'អតិថិជន',
+                                      style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 15, color: AppTheme.textDark),
+                                      overflow: TextOverflow.ellipsis,
+                                    ),
+                                  ),
+                                  const SizedBox(width: 6),
+                                  Container(
+                                    padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 2),
+                                    decoration: BoxDecoration(
+                                      color: const Color(0xFFDCFCE7),
+                                      borderRadius: BorderRadius.circular(6),
+                                    ),
+                                    child: const Text(
+                                      'Verified',
+                                      style: TextStyle(color: Color(0xFF15803D), fontSize: 10, fontWeight: FontWeight.bold),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                              const SizedBox(height: 2),
+                              Text(
+                                customerAuth.user?.email ?? '',
+                                style: const TextStyle(color: AppTheme.textMuted, fontSize: 12),
+                              ),
+                              if (customerAuth.user?.phone.isNotEmpty == true) ...[
+                                const SizedBox(height: 2),
+                                Text(
+                                  '☎️ ${customerAuth.user!.phone}',
+                                  style: const TextStyle(color: AppTheme.textMuted, fontSize: 11.5),
+                                ),
+                              ],
+                            ],
+                          ),
+                        ),
+                        IconButton(
+                          icon: const Icon(Icons.logout, color: Colors.redAccent, size: 20),
+                          tooltip: 'ចាកចេញពីគណនី (Logout)',
+                          onPressed: () => _confirmCustomerLogout(context, ref),
+                        ),
+                      ],
+                    ),
+                    if (customerAuth.user?.address.isNotEmpty == true) ...[
+                      const SizedBox(height: 10),
+                      Container(
+                        padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 6),
+                        decoration: BoxDecoration(
+                          color: const Color(0xFFF8FAFC),
+                          borderRadius: BorderRadius.circular(8),
+                        ),
+                        child: Row(
+                          children: [
+                            const Icon(Icons.location_on, size: 14, color: AppTheme.primaryColor),
+                            const SizedBox(width: 6),
+                            Expanded(
+                              child: Text(
+                                customerAuth.user!.address,
+                                style: const TextStyle(fontSize: 11.5, color: Color(0xFF475569)),
+                                maxLines: 1,
+                                overflow: TextOverflow.ellipsis,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ],
+                  ],
+                ),
+              ),
+
             // Restaurant Header Card with Phum Yeung Authentic Logo
             Container(
               padding: const EdgeInsets.all(18),
@@ -466,6 +650,36 @@ class ProfileScreen extends ConsumerWidget {
       subtitle: subtitle != null ? Text(subtitle, style: const TextStyle(fontSize: 11.5, color: AppTheme.textMuted)) : null,
       trailing: const Icon(Icons.chevron_right, size: 18, color: Colors.grey),
       onTap: onTap,
+    );
+  }
+
+  void _confirmCustomerLogout(BuildContext context, WidgetRef ref) {
+    showDialog(
+      context: context,
+      builder: (ctx) => AlertDialog(
+        title: const Text('ចាកចេញពីគណនី'),
+        content: const Text('តើអ្នកពិតជាចង់ចាកចេញពីគណនីអតិថិជនមែនទេ?'),
+        actions: [
+          TextButton(
+            onPressed: () => Navigator.pop(ctx),
+            child: const Text('បោះបង់'),
+          ),
+          ElevatedButton(
+            style: ElevatedButton.styleFrom(
+              backgroundColor: Colors.red,
+              foregroundColor: Colors.white,
+            ),
+            onPressed: () {
+              Navigator.pop(ctx);
+              ref.read(customerAuthProvider.notifier).logout();
+              ScaffoldMessenger.of(context).showSnackBar(
+                const SnackBar(content: Text('បានចាកចេញពីគណនីអតិថិជន')),
+              );
+            },
+            child: const Text('ចាកចេញ'),
+          ),
+        ],
+      ),
     );
   }
 }
