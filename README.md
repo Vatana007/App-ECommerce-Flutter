@@ -2,8 +2,8 @@
 
 A production-ready Full Stack Food & Restaurant E-Commerce application with:
 - **Client App / Web**: Flutter 3 (Riverpod 3.5, GoRouter, Dio, Kantumruy Pro Typography) - Runs seamlessly on **Web Browser (Chrome/Edge)**, **Android**, **iOS**, and **Desktop**.
-- **Backend API**: **Node.js Express REST API** (Port 5000) with 160 authentic Cambodian dishes, 14 categories, promo discount engine, order checkout, and static image server.
-- **Authentic Payment**: **Real NBC Bakong KHQR** (`bakong-khqr`) EMVCo standard generation, real-time transaction verification via MD5, and developer testing simulation.
+- **Central Backend API**: **Node.js Express REST API** (Port 5000) located in `D:\DUC-Learning-All-Year\Year 4\React\Code\E-Restaurant\backend` with 160 authentic Cambodian dishes, 14 categories, promo discount engine, order checkout, real Bakong KHQR, and static image server.
+- **Authentic Payment**: **Real NBC Bakong KHQR** (`bakong-khqr`) EMVCo standard generation, real-time transaction verification via MD5.
 
 ---
 
@@ -25,29 +25,24 @@ Project-Final/
 │   │   │   ├── catalog/        # Categories selector, search, 160 dishes repository
 │   │   │   ├── cart/           # Cart provider, quantity update, coupon discounts
 │   │   │   ├── checkout/       # Delivery details, payment method selector
-│   │   │   │   └── screens/
-│   │   │   │       ├── checkout_screen.dart
-│   │   │   │       ├── khqr_payment_screen.dart  # Real Bakong KHQR with MD5 verify & simulation
-│   │   │   │       └── order_success_screen.dart # Order confirmation
+│   │   │   ├── scan/           # QR code & food code scanner
+│   │   │   ├── wishlist/       # Saved favorite dishes
 │   │   │   ├── orders/         # Order tracking timeline & order history
 │   │   │   ├── product_detail/ # Dish details, spice levels, add to cart
+│   │   │   ├── profile/        # Customer profile & Admin portal trigger
+│   │   │   ├── admin/          # All-in-One Admin Management Portal
 │   │   │   └── home/           # Restaurant announcement, promo banners, categories
 │   │   └── shared/
 │   │       ├── models/money.dart # Dual currency (USD $ & KHR ៛ at 4,100 rate)
-│   │       └── widgets/        # ProductCard with spice badge & rating
+│   │       └── widgets/        # Modern minimal BottomNavigationBar, ProductCard
 │   ├── build/web/              # Pre-compiled high performance Web Application
 │   └── pubspec.yaml
 │
-└── backend/                    # Node.js Express REST API (Port 5000)
-    ├── controllers/
-    │   └── v1Controller.js     # Full API logic: Categories, Products, Promos, Orders, KHQR
-    ├── routes/
-    │   └── v1Routes.js         # Versioned REST API endpoints (/api/v1/...)
-    ├── data/
-    │   └── dishes.json         # 160 Authentic Cambodian dishes & category mapping
-    ├── public/images/foods/    # 526 Authentic high-resolution Khmer food photos
-    ├── server.js               # Express application entrypoint
-    └── test_node_api.js        # Automated API test suite
+└── 🌐 Backend Service:
+    └── E-Restaurant/backend/   # Single Master API Server (Port 5000)
+        ├── routes/v1Routes.js  # Unified API endpoints for Flutter & Web (/api/v1/...)
+        ├── data/dishes.json    # 160 Authentic Cambodian dishes & category mapping
+        └── server.js           # Central Express API with Bakong KHQR & MongoDB
 ```
 
 ---
@@ -55,11 +50,9 @@ Project-Final/
 ## ⚡ របៀបដំណើរការ (How to Run)
 
 ### ១. ដំណើរការ Backend (Node.js Express API)
-បើក Terminal ទីមួយ ហើយចូលទៅកាន់ folder `backend`:
+បើក Terminal ទីមួយ ហើយចូលទៅកាន់ folder `E-Restaurant/backend`:
 ```bash
-cd "backend"
-npm start
-# ឬ
+cd "D:\DUC-Learning-All-Year\Year 4\React\Code\E-Restaurant\backend"
 node server.js
 ```
 > API Server នឹងដំណើរការលើ: `http://127.0.0.1:5000`

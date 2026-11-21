@@ -35,8 +35,9 @@ git checkout develop
 ```
 
 ### ២. ដំឡើង និងដំណើរការ Backend
+Backend ចម្បងរបស់ប្រព័ន្ធស្ថិតនៅក្នុងគម្រោង `E-Restaurant/backend`:
 ```bash
-cd backend
+cd "D:\DUC-Learning-All-Year\Year 4\React\Code\E-Restaurant\backend"
 npm install
 node server.js
 ```
@@ -44,7 +45,7 @@ node server.js
 
 ### ៣. ដំឡើង និងដំណើរការ Flutter App
 ```bash
-cd ../flutter_app
+cd "D:\DUC-Learning-All-Year\Year 4\Flutter\Code\Project-Final\flutter_app"
 flutter pub get
 flutter run -d chrome
 ```
