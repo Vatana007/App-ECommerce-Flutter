@@ -36,23 +36,45 @@ class ProductDto {
   });
 
   factory ProductDto.fromJson(Map<String, dynamic> json) {
+    final nameKm = json['name_km']?.toString() ?? '';
+    final nameEn = json['name_en']?.toString() ?? '';
+    final defaultName = nameEn.isNotEmpty && nameKm.isNotEmpty
+        ? '$nameKm ($nameEn)'
+        : (nameKm.isNotEmpty ? nameKm : 'ម្ហូបខ្មែរ');
+
+    final rawImage = json['image']?.toString();
+    final rawImages = (json['images'] as List<dynamic>?)
+            ?.map((e) => e.toString())
+            .toList() ??
+        (rawImage != null && rawImage.isNotEmpty ? [rawImage] : []);
+
     return ProductDto(
-      id: json['id']?.toString() ?? '',
-      name: json['name']?.toString() ?? '',
-      nameKm: json['name_km']?.toString() ?? '',
-      nameEn: json['name_en']?.toString() ?? '',
-      description: json['description']?.toString() ?? json['desc_km']?.toString() ?? '',
+      id: json['id']?.toString() ??
+          json['dishId']?.toString() ??
+          json['_id']?.toString() ??
+          '',
+      name: json['name']?.toString() ?? defaultName,
+      nameKm: nameKm,
+      nameEn: nameEn,
+      description: json['description']?.toString() ??
+          json['desc_km']?.toString() ??
+          json['desc_en']?.toString() ??
+          'ម្ហូបឆ្ងាញ់ប្រចាំហាងភូមិយើង រសជាតិដើមបែបខ្មែរពិតៗ។',
       descKm: json['desc_km']?.toString() ?? '',
       descEn: json['desc_en']?.toString() ?? '',
       price: (json['price'] as num?)?.toDouble() ?? 0.0,
-      stock: (json['stock'] as num?)?.toInt() ?? 50,
-      images: (json['images'] as List<dynamic>?)?.map((e) => e.toString()).toList() ??
-          (json['image'] != null ? [json['image'].toString()] : []),
-      categoryId: json['category_id']?.toString() ?? '',
+      stock: (json['stock'] as num?)?.toInt() ??
+          (json['inStock'] == false ? 0 : 50),
+      images: rawImages,
+      categoryId: json['category_id']?.toString() ??
+          json['category']?.toString() ??
+          '',
       spiceLevel: json['spice_level']?.toString() ?? 'mild',
       isFeatured: json['featured'] == true,
       rating: (json['rating'] as num?)?.toDouble() ?? 5.0,
-      reviewCount: (json['review_count'] as num?)?.toInt() ?? 15,
+      reviewCount: (json['review_count'] as num?)?.toInt() ??
+          (json['reviews_count'] as num?)?.toInt() ??
+          15,
     );
   }
 

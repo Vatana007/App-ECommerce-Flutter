@@ -31,21 +31,42 @@ class CatalogRemoteDataSourceImpl implements CatalogRemoteDataSource {
   }) async {
     final Map<String, dynamic> queryParams = {'limit': limit};
     if (cursor != null) queryParams['cursor'] = cursor;
-    if (categoryId != null && categoryId != 'all') queryParams['category_id'] = categoryId;
+    if (categoryId != null && categoryId != 'all') {
+      queryParams['category_id'] = categoryId;
+      queryParams['category'] = categoryId;
+    }
     if (search != null && search.isNotEmpty) queryParams['search'] = search;
     if (featured != null) queryParams['featured'] = featured;
 
-    final response = await dio.get('/products', queryParameters: queryParams);
+    try {
+      final response = await dio.get('/products', queryParameters: queryParams);
+      final data = response.data;
+      final List list = data['data'] ?? [];
+      if (list.isNotEmpty) {
+        return list.map((json) => ProductDto.fromJson(json)).toList();
+      }
+    } catch (_) {}
 
-    final data = response.data;
-    final List list = data['data'] ?? [];
-    return list.map((json) => ProductDto.fromJson(json)).toList();
+    // Fallback to /dishes (compatible with hosted Render cloud backend)
+    try {
+      final response = await dio.get('/dishes', queryParameters: queryParams);
+      final data = response.data;
+      final List list = data['data'] ?? [];
+      return list.map((json) => ProductDto.fromJson(json)).toList();
+    } catch (_) {
+      return [];
+    }
   }
 
   @override
   Future<ProductDto> fetchProductDetail(String id) async {
-    final response = await dio.get('/products/$id');
-    return ProductDto.fromJson(response.data['data']);
+    try {
+      final response = await dio.get('/products/$id');
+      return ProductDto.fromJson(response.data['data']);
+    } catch (_) {
+      final response = await dio.get('/dishes/$id');
+      return ProductDto.fromJson(response.data['data']);
+    }
   }
 
   @override

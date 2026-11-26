@@ -46,9 +46,12 @@ class Product {
       if (img.startsWith('http://') || img.startsWith('https://')) {
         return img;
       }
-      final baseUrl = AppConfig.instance.apiBaseUrl.replaceAll('/api/v1', '');
-      return '$baseUrl$img';
+      final baseUrl = AppConfig.instance.apiBaseUrl
+          .replaceAll('/api/v1', '')
+          .replaceAll('/api', '');
+      final cleanImg = img.startsWith('/') ? img : '/$img';
+      return '$baseUrl$cleanImg';
     }
-    return 'https://placehold.co/400x400.png?text=Phum+Yeung+Food';
+    return 'https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=600&q=80';
   }
 }

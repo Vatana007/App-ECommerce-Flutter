@@ -1,5 +1,3 @@
-import 'package:flutter/foundation.dart';
-
 enum Environment { dev, staging, prod }
 
 class AppConfig {
@@ -22,30 +20,25 @@ class AppConfig {
     _instance = config;
   }
 
-  /// Automatically picks the correct base URL based on device/platform
+  /// Hosted Cloud Backend URL (connected to MongoDB Atlas & serving authentic images)
+  static const String cloudApiBaseUrl = 'https://e-restaurant-uk4w.onrender.com/api';
+
+  /// Automatically picks the cloud base URL for all devices (Web, Emulator, Physical Android, iOS)
   static String get defaultDevBaseUrl {
-    if (kIsWeb) {
-      return 'http://127.0.0.1:5000/api/v1';
-    }
-    // Android emulator requires 10.0.2.2 instead of localhost
-    if (defaultTargetPlatform == TargetPlatform.android) {
-      return 'http://10.0.2.2:5000/api/v1';
-    }
-    // Windows, macOS, Linux, iOS simulator
-    return 'http://127.0.0.1:5000/api/v1';
+    return cloudApiBaseUrl;
   }
 
   static AppConfig get devConfig => AppConfig(
         environment: Environment.dev,
         apiBaseUrl: defaultDevBaseUrl,
-        appName: 'Phum Yeung Restaurant (Dev)',
+        appName: 'ភោជនីយដ្ឋាន ភូមិយើង (Phum Yeung)',
         enableLogging: true,
       );
 
   static const AppConfig prodConfig = AppConfig(
     environment: Environment.prod,
-    apiBaseUrl: 'https://e-restaurant-virid.vercel.app/api/v1',
-    appName: 'E-Commerce',
+    apiBaseUrl: cloudApiBaseUrl,
+    appName: 'ភោជនីយដ្ឋាន ភូមិយើង (Phum Yeung)',
     enableLogging: false,
   );
 }

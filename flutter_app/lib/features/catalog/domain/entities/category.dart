@@ -15,9 +15,13 @@ class Category {
 
   factory Category.fromJson(Map<String, dynamic> json) {
     return Category(
-      id: json['id']?.toString() ?? '',
-      nameKm: json['name_km']?.toString() ?? '',
-      nameEn: json['name_en']?.toString() ?? '',
+      id: json['id']?.toString() ??
+          json['category_id']?.toString() ??
+          json['slug']?.toString() ??
+          json['_id']?.toString() ??
+          '',
+      nameKm: json['name_km']?.toString() ?? json['label_km']?.toString() ?? '',
+      nameEn: json['name_en']?.toString() ?? json['label_en']?.toString() ?? '',
       icon: json['icon']?.toString(),
       productsCount: (json['products_count'] as num?)?.toInt() ?? 0,
     );
