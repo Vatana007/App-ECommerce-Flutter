@@ -29,8 +29,8 @@
 
 ### ១. Clone គម្រោងមកកាន់កុំព្យូទ័រ
 ```bash
-git clone <GITHUB_REPO_URL>
-cd Project-Final
+git clone https://github.com/Vatana007/App-ECommerce-Flutter.git
+cd App-ECommerce-Flutter
 git checkout develop
 ```
 

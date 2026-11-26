@@ -2,8 +2,10 @@
 
 A production-ready Full Stack Food & Restaurant E-Commerce application with:
 - **Client App / Web**: Flutter 3 (Riverpod 3.5, GoRouter, Dio, Kantumruy Pro Typography) - Runs seamlessly on **Web Browser (Chrome/Edge)**, **Android**, **iOS**, and **Desktop**.
-- **Central Backend API**: **Node.js Express REST API** (Port 5000) located in `D:\DUC-Learning-All-Year\Year 4\React\Code\E-Restaurant\backend` with 160 authentic Cambodian dishes, 14 categories, promo discount engine, order checkout, real Bakong KHQR, and static image server.
+- **Live Cloud Backend API**: Hosted on Render (`https://e-restaurant-uk4w.onrender.com/api`) connected to MongoDB Atlas, supporting online orders, customer auth, and authentic food menu images.
+- **Central Local Backend (Optional)**: Node.js Express REST API in `D:\DUC-Learning-All-Year\Year 4\React\Code\E-Restaurant\backend`.
 - **Authentic Payment**: **Real NBC Bakong KHQR** (`bakong-khqr`) EMVCo standard generation, real-time transaction verification via MD5.
+- **GitHub Repository**: [https://github.com/Vatana007/App-ECommerce-Flutter.git](https://github.com/Vatana007/App-ECommerce-Flutter.git)
 
 ---
 
