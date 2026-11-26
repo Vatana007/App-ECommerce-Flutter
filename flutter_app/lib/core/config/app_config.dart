@@ -44,7 +44,7 @@ class AppConfig {
 
   static const AppConfig prodConfig = AppConfig(
     environment: Environment.prod,
-    apiBaseUrl: 'https://api.yourdomain.com/api/v1',
+    apiBaseUrl: 'https://e-restaurant-virid.vercel.app/api/v1',
     appName: 'E-Commerce',
     enableLogging: false,
   );
