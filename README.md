@@ -186,6 +186,19 @@ gitGraph
 
 ---
 
+## 👥 សមាជិកក្រុមការងារ (Development Team)
+
+គម្រោងនេះត្រូវបានរួមគ្នាស្រាវជ្រាវ និងអភិវឌ្ឍដោយក្រុមនិស្សិតឆ្នាំទី ៤ (Year 4 Engineering Team)៖
+
+| ល.រ (No.) | ឈ្មោះសមាជិក (Team Member) | តួនាទី / ទំនួលខុសត្រូវ (Role & Responsibilities) |
+|:---:|---|---|
+| **១** | **HIM Lihour** | Full-Stack Integration & Cloud Backend Architecture |
+| **២** | **VUTH Vatana** | Flutter Mobile/Web Core & State Management (Riverpod) |
+| **៣** | **LORN Sovannarorth** | UI/UX Design System & Product Catalog Engine |
+| **៤** | **REAM Rithy** | Payment Integration (NBC Bakong KHQR) & Order Engine |
+
+---
+
 ## 📄 អាជ្ញាប័ណ្ណ (License)
 
 គម្រោងនេះត្រូវបានបង្កើតឡើងសម្រាប់គោលបំណងសិក្សា និងស្រាវជ្រាវ (Year 4 Final Project)។ រក្សាសិទ្ធិគ្រប់យ៉ាងដោយក្រុមការងារ **ភោជនីយដ្ឋាន ភូមិយើង**។
