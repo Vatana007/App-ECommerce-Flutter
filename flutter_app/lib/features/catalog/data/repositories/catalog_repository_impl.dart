@@ -25,7 +25,7 @@ class CatalogRepositoryImpl implements CatalogRepository {
   static final List<Product> _mockFallbackDishes = [
     const Product(
       id: 'cmt1krpbt00180aj7e18d2xp6',
-      name: 'កង្កែបចំបើងពិសេស (Special Fried Straw Frog Legs)',
+      name: 'កង្កែបចំបើងពិសេស',
       nameKm: 'កង្កែបចំបើងពិសេស',
       nameEn: 'Special Fried Straw Frog Legs',
       description: 'ម្ហូបឆ្ងាញ់ប្រចាំហាងភូមិយើង រសជាតិដើមបែបខ្មែរពិតៗ។',
@@ -42,7 +42,7 @@ class CatalogRepositoryImpl implements CatalogRepository {
     ),
     const Product(
       id: 'cmst1x5c200060akgz6pjzvxr',
-      name: 'ឡាបសាច់មាន់ពិសេស (Special Minced Chicken Larb)',
+      name: 'ឡាបសាច់មាន់ពិសេស',
       nameKm: 'ឡាបសាច់មាន់ពិសេស',
       nameEn: 'Special Minced Chicken Larb',
       description: 'ម្ហូបឆ្ងាញ់ប្រចាំហាងភូមិយើង រសជាតិដើមបែបខ្មែរពិតៗ។',
@@ -59,7 +59,7 @@ class CatalogRepositoryImpl implements CatalogRepository {
     ),
     const Product(
       id: 'cmt1kjgux000409koqhepcykd',
-      name: 'ឡាបសាច់ទាពិសេស (Special Duck Larb Salad)',
+      name: 'ឡាបសាច់ទាពិសេស',
       nameKm: 'ឡាបសាច់ទាពិសេស',
       nameEn: 'Special Duck Larb Salad',
       description: 'ម្ហូបឆ្ងាញ់ប្រចាំហាងភូមិយើង រសជាតិដើមបែបខ្មែរពិតៗ។',
@@ -76,7 +76,7 @@ class CatalogRepositoryImpl implements CatalogRepository {
     ),
     const Product(
       id: 'cmtuypwop00020agm2ef3d0yx',
-      name: 'កង្កែបបំពងអំបិលម្ទេស (Crispy Frog Legs with Chili Salt)',
+      name: 'កង្កែបបំពងអំបិលម្ទេស',
       nameKm: 'កង្កែបបំពងអំបិលម្ទេស',
       nameEn: 'Crispy Frog Legs with Chili Salt',
       description: 'កង្កែបស្រស់បំពងស្រួយ ជាមួយអំបិលម្រេចកំពត និងម្ទេសហិរឈ្ងុយ។',
@@ -93,7 +93,7 @@ class CatalogRepositoryImpl implements CatalogRepository {
     ),
     const Product(
       id: 'clyd2ywom000c3m93rjfp38ql',
-      name: 'ឆាអន្ទង់ម្ទេសខ្ទឹមជ្រក់ (Stir-Fried Eel with Chili & Pickled Garlic)',
+      name: 'ឆាអន្ទង់ម្ទេសខ្ទឹមជ្រក់',
       nameKm: 'ឆាអន្ទង់ម្ទេសខ្ទឹមជ្រក់',
       nameEn: 'Stir-Fried Eel with Chili & Pickled Garlic',
       description: 'អន្ទង់ទន្លេស្រស់ឆាជាមួយខ្ទឹមជ្រក់ និងម្ទេសក្រៀមហិរឈ្ងុយឆ្ងាញ់។',

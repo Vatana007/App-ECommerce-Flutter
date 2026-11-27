@@ -77,7 +77,7 @@ class _AdminSettingsScreenState extends ConsumerState<AdminSettingsScreen> {
     return Scaffold(
       backgroundColor: AppTheme.backgroundColor,
       appBar: AppBar(
-        title: const Text('ការកំណត់ហាង (Store Settings)'),
+        title: const Text('ការកំណត់ហាង'),
       ),
       body: settingsAsync.when(
         loading: () => const Center(child: CircularProgressIndicator()),
@@ -117,7 +117,7 @@ class _AdminSettingsScreenState extends ConsumerState<AdminSettingsScreen> {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Text(
-                                _isOpen ? 'ហាងកំពុងបើកដំណើរការ (Store Open)' : 'ហាងបានបិទបណ្តោះអាសន្ន (Store Closed)',
+                                _isOpen ? 'ហាងកំពុងបើកដំណើរការ' : 'ហាងបានបិទបណ្តោះអាសន្ន',
                                 style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 13.5),
                               ),
                               const SizedBox(height: 2),
@@ -152,7 +152,7 @@ class _AdminSettingsScreenState extends ConsumerState<AdminSettingsScreen> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       const Text(
-                        'តម្លៃសេវា និងអត្រារូបិយប័ណ្ណ (Fees & Currency)',
+                        'តម្លៃសេវា និងអត្រារូបិយប័ណ្ណ',
                         style: TextStyle(fontWeight: FontWeight.bold, fontSize: 14),
                       ),
                       const SizedBox(height: 14),
@@ -191,7 +191,7 @@ class _AdminSettingsScreenState extends ConsumerState<AdminSettingsScreen> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       const Text(
-                        'សារជូនដំណឹងប្រូម៉ូសិន (Announcement Banner)',
+                        'សារជូនដំណឹងប្រូម៉ូសិន',
                         style: TextStyle(fontWeight: FontWeight.bold, fontSize: 14),
                       ),
                       const SizedBox(height: 6),
@@ -204,7 +204,7 @@ class _AdminSettingsScreenState extends ConsumerState<AdminSettingsScreen> {
                         controller: _announcementController,
                         maxLines: 2,
                         decoration: const InputDecoration(
-                          labelText: 'អត្ថបទជូនដំណឹង (Banner Text)',
+                          labelText: 'អត្ថបទជូនដំណឹង',
                           prefixIcon: Icon(Icons.campaign, color: AppTheme.secondaryDark),
                         ),
                       ),
@@ -232,7 +232,7 @@ class _AdminSettingsScreenState extends ConsumerState<AdminSettingsScreen> {
                           )
                         : const Icon(Icons.save),
                     label: const Text(
-                      'រក្សាទុកការកំណត់ (Save Settings)',
+                      'រក្សាទុកការកំណត់',
                       style: TextStyle(fontWeight: FontWeight.bold, fontSize: 14),
                     ),
                   ),

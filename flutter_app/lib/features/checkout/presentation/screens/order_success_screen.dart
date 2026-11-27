@@ -69,7 +69,7 @@ class OrderSuccessScreen extends ConsumerWidget {
                   ),
                   child: Column(
                     children: [
-                      _rowInfo('លេខបញ្ជាទិញ (Order ID):', '#${order.id}'),
+                      _rowInfo('លេខបញ្ជាទិញ:', '#${order.id}'),
                       const Divider(height: 20),
                       _rowInfo('វិធីសាស្រ្តទូទាត់:', order.paymentMethodDisplay),
                       const Divider(height: 20),
@@ -95,7 +95,7 @@ class OrderSuccessScreen extends ConsumerWidget {
                     shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
                   ),
                   onPressed: () => context.push('/order-detail/$orderId'),
-                  child: const Text('តាមដានការកុម្ម៉ង់ (Track Order)', style: TextStyle(fontWeight: FontWeight.bold)),
+                  child: const Text('តាមដានការកុម្ម៉ង់', style: TextStyle(fontWeight: FontWeight.bold)),
                 ),
               ),
 
@@ -109,7 +109,7 @@ class OrderSuccessScreen extends ConsumerWidget {
                     shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
                   ),
                   onPressed: () => context.go('/'),
-                  child: const Text('បន្តការទិញទំនិញ (Back to Home)'),
+                  child: const Text('បន្តការទិញទំនិញ'),
                 ),
               ),
             ],

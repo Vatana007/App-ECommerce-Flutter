@@ -31,14 +31,14 @@ class AppConfig {
   static AppConfig get devConfig => AppConfig(
         environment: Environment.dev,
         apiBaseUrl: defaultDevBaseUrl,
-        appName: 'ភោជនីយដ្ឋាន ភូមិយើង (Phum Yeung)',
+        appName: 'ភោជនីយដ្ឋាន ភូមិយើង',
         enableLogging: true,
       );
 
   static const AppConfig prodConfig = AppConfig(
     environment: Environment.prod,
     apiBaseUrl: cloudApiBaseUrl,
-    appName: 'ភោជនីយដ្ឋាន ភូមិយើង (Phum Yeung)',
+    appName: 'ភោជនីយដ្ឋាន ភូមិយើង',
     enableLogging: false,
   );
 }

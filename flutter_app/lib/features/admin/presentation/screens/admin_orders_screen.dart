@@ -49,7 +49,7 @@ class _AdminOrdersScreenState extends ConsumerState<AdminOrdersScreen> {
     return Scaffold(
       backgroundColor: AppTheme.backgroundColor,
       appBar: AppBar(
-        title: const Text('គ្រប់គ្រងការកុម្ម៉ង់ (Orders Management)'),
+        title: const Text('គ្រប់គ្រងការកុម្ម៉ង់'),
         actions: [
           IconButton(
             icon: const Icon(Icons.refresh),
@@ -67,15 +67,15 @@ class _AdminOrdersScreenState extends ConsumerState<AdminOrdersScreen> {
               scrollDirection: Axis.horizontal,
               child: Row(
                 children: [
-                  _filterChip('all', 'ទាំងអស់ (All)'),
+                  _filterChip('all', 'ទាំងអស់'),
                   const SizedBox(width: 8),
-                  _filterChip('pending', 'រង់ចាំ (Pending)'),
+                  _filterChip('pending', 'រង់ចាំ'),
                   const SizedBox(width: 8),
-                  _filterChip('preparing', 'កំពុងចម្អិន (Preparing)'),
+                  _filterChip('preparing', 'កំពុងចម្អិន'),
                   const SizedBox(width: 8),
-                  _filterChip('delivering', 'កំពុងដឹក (Delivering)'),
+                  _filterChip('delivering', 'កំពុងដឹក'),
                   const SizedBox(width: 8),
-                  _filterChip('delivered', 'បានទទួល (Delivered)'),
+                  _filterChip('delivered', 'បានទទួល'),
                 ],
               ),
             ),
@@ -214,7 +214,7 @@ class _AdminOrdersScreenState extends ConsumerState<AdminOrdersScreen> {
                                       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
                                     ),
                                     icon: const Icon(Icons.soup_kitchen, size: 16),
-                                    label: const Text('ចម្អិន (Start Cook)', style: TextStyle(fontSize: 12, fontWeight: FontWeight.bold)),
+                                    label: const Text('ចម្អិន', style: TextStyle(fontSize: 12, fontWeight: FontWeight.bold)),
                                     onPressed: () => _updateStatus(orderId, 'preparing'),
                                   ),
                                 ),
@@ -228,7 +228,7 @@ class _AdminOrdersScreenState extends ConsumerState<AdminOrdersScreen> {
                                       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
                                     ),
                                     icon: const Icon(Icons.delivery_dining, size: 16),
-                                    label: const Text('ដឹកជញ្ជូន (Dispatch)', style: TextStyle(fontSize: 12, fontWeight: FontWeight.bold)),
+                                    label: const Text('ដឹកជញ្ជូន', style: TextStyle(fontSize: 12, fontWeight: FontWeight.bold)),
                                     onPressed: () => _updateStatus(orderId, 'delivering'),
                                   ),
                                 ),
@@ -242,7 +242,7 @@ class _AdminOrdersScreenState extends ConsumerState<AdminOrdersScreen> {
                                       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
                                     ),
                                     icon: const Icon(Icons.check_circle, size: 16),
-                                    label: const Text('រួចរាល់ (Delivered)', style: TextStyle(fontSize: 12, fontWeight: FontWeight.bold)),
+                                    label: const Text('រួចរាល់', style: TextStyle(fontSize: 12, fontWeight: FontWeight.bold)),
                                     onPressed: () => _updateStatus(orderId, 'delivered'),
                                   ),
                                 ),

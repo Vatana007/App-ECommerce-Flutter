@@ -108,7 +108,7 @@ class CustomerAuthNotifier extends Notifier<CustomerAuthState> {
           isAuthenticated: true,
           user: user,
           isLoading: false,
-          successMessage: 'ចូលប្រើប្រាស់ដោយជោគជ័យ (Login successful)',
+          successMessage: 'ចូលប្រើប្រាស់ដោយជោគជ័យ',
           clearDevCode: true,
         );
         return true;
@@ -116,7 +116,7 @@ class CustomerAuthNotifier extends Notifier<CustomerAuthState> {
 
       state = state.copyWith(
         isLoading: false,
-        errorMessage: data['message']?.toString() ?? 'អុីមែល ឬពាក្យសម្ងាត់មិនត្រឹមត្រូវ (Invalid email or password)',
+        errorMessage: data['message']?.toString() ?? 'អុីមែល ឬពាក្យសម្ងាត់មិនត្រឹមត្រូវ',
       );
       return false;
     } on DioException catch (e) {
@@ -141,7 +141,7 @@ class CustomerAuthNotifier extends Notifier<CustomerAuthState> {
 
       state = state.copyWith(
         isLoading: false,
-        errorMessage: 'មិនអាចភ្ជាប់ទៅកាន់ម៉ាស៊ីនបម្រើបានទេ (Connection error)',
+        errorMessage: 'មិនអាចភ្ជាប់ទៅកាន់ម៉ាស៊ីនបម្រើបានទេ',
       );
       return false;
     } catch (e) {
@@ -182,7 +182,7 @@ class CustomerAuthNotifier extends Notifier<CustomerAuthState> {
           isLoading: false,
           unverifiedEmail: email.trim(),
           devCode: data['devCode']?.toString(),
-          successMessage: 'លេខកូដសម្ងាត់ ៦ ខ្ទង់ត្រូវបានផ្ញើទៅកាន់អ៊ីមែលរបស់អ្នក (Verification code sent)',
+          successMessage: 'លេខកូដសម្ងាត់ ៦ ខ្ទង់ត្រូវបានផ្ញើទៅកាន់អ៊ីមែលរបស់អ្នក',
         );
         return true;
       }
@@ -237,7 +237,7 @@ class CustomerAuthNotifier extends Notifier<CustomerAuthState> {
           isAuthenticated: true,
           user: user,
           isLoading: false,
-          successMessage: 'គណនីត្រូវបានផ្ទៀងផ្ទាត់ដោយជោគជ័យ! (Account verified)',
+          successMessage: 'គណនីត្រូវបានផ្ទៀងផ្ទាត់ដោយជោគជ័យ!',
           clearDevCode: true,
         );
         return true;
@@ -280,7 +280,7 @@ class CustomerAuthNotifier extends Notifier<CustomerAuthState> {
       state = state.copyWith(
         isLoading: false,
         devCode: data['devCode']?.toString(),
-        successMessage: 'លេខកូដថ្មីត្រូវបានផ្ញើទៅកាន់អ៊ីមែលរបស់អ្នក (New code sent)',
+        successMessage: 'លេខកូដថ្មីត្រូវបានផ្ញើទៅកាន់អ៊ីមែលរបស់អ្នក',
       );
       return true;
     } on DioException catch (e) {

@@ -31,11 +31,11 @@ class ProductCard extends ConsumerWidget {
   String _getSpiceLabel(String spice) {
     switch (spice.toLowerCase()) {
       case 'hot':
-        return '🌶️ ហិរ (Hot)';
+        return '🌶️ ហិរ';
       case 'extra':
-        return '🌶️🌶️ ហិរខ្លាំង (Extra)';
+        return '🌶️🌶️ ហិរខ្លាំង';
       default:
-        return '🌿 ហិរតិច (Mild)';
+        return '🌿 ហិរតិច';
     }
   }
 
@@ -147,7 +147,7 @@ class ProductCard extends ConsumerWidget {
                         ),
                         child: const Center(
                           child: Text(
-                            'អស់ស្តុក (Sold Out)',
+                            'អស់ស្តុក',
                             style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 12),
                           ),
                         ),

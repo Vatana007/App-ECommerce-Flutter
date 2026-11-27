@@ -116,7 +116,7 @@ class _AdminLoginDialogState extends ConsumerState<AdminLoginDialog> {
               controller: _emailController,
               keyboardType: TextInputType.emailAddress,
               decoration: InputDecoration(
-                labelText: 'អុីមែល (Admin Email)',
+                labelText: 'អុីមែល',
                 prefixIcon: const Icon(Icons.email_outlined, color: AppTheme.primaryColor),
                 border: OutlineInputBorder(borderRadius: BorderRadius.circular(12)),
               ),
@@ -128,7 +128,7 @@ class _AdminLoginDialogState extends ConsumerState<AdminLoginDialog> {
               controller: _passwordController,
               obscureText: _obscure,
               decoration: InputDecoration(
-                labelText: 'ពាក្យសម្ងាត់ (Password)',
+                labelText: 'ពាក្យសម្ងាត់',
                 prefixIcon: const Icon(Icons.lock_outline, color: AppTheme.primaryColor),
                 suffixIcon: IconButton(
                   icon: Icon(_obscure ? Icons.visibility_off : Icons.visibility, color: Colors.grey),
@@ -185,7 +185,7 @@ class _AdminLoginDialogState extends ConsumerState<AdminLoginDialog> {
                         child: CircularProgressIndicator(color: Colors.white, strokeWidth: 2),
                       )
                     : const Text(
-                        'ចូលគ្រប់គ្រង (Login to Portal)',
+                        'ចូលគ្រប់គ្រង',
                         style: TextStyle(fontWeight: FontWeight.bold, fontSize: 14),
                       ),
               ),
@@ -194,7 +194,7 @@ class _AdminLoginDialogState extends ConsumerState<AdminLoginDialog> {
 
             TextButton(
               onPressed: () => Navigator.of(context).pop(),
-              child: const Text('បោះបង់ (Cancel)', style: TextStyle(color: Colors.grey)),
+              child: const Text('បោះបង់', style: TextStyle(color: Colors.grey)),
             ),
           ],
         ),

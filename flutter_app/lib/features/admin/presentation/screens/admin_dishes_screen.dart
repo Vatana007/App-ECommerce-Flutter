@@ -52,7 +52,7 @@ class _AdminDishesScreenState extends ConsumerState<AdminDishesScreen> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  const Text('មុខម្ហូបពិសេស (Featured):', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 13)),
+                  const Text('មុខម្ហូបពិសេស:', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 13)),
                   Switch(
                     value: isFeatured,
                     activeThumbColor: AppTheme.primaryColor,
@@ -64,13 +64,13 @@ class _AdminDishesScreenState extends ConsumerState<AdminDishesScreen> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  const Text('កម្រិតហិរ (Spice Level):', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 13)),
+                  const Text('កម្រិតហិរ:', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 13)),
                   DropdownButton<String>(
                     value: spiceLevel,
                     items: const [
-                      DropdownMenuItem(value: 'mild', child: Text('🌿 ហិរតិច (Mild)')),
-                      DropdownMenuItem(value: 'hot', child: Text('🌶️ ហិរ (Hot)')),
-                      DropdownMenuItem(value: 'extra', child: Text('🌶️🌶️ ហិរខ្លាំង (Extra)')),
+                      DropdownMenuItem(value: 'mild', child: Text('🌿 ហិរតិច')),
+                      DropdownMenuItem(value: 'hot', child: Text('🌶️ ហិរ')),
+                      DropdownMenuItem(value: 'extra', child: Text('🌶️🌶️ ហិរខ្លាំង')),
                     ],
                     onChanged: (val) {
                       if (val != null) setDialogState(() => spiceLevel = val);
@@ -117,7 +117,7 @@ class _AdminDishesScreenState extends ConsumerState<AdminDishesScreen> {
                   }
                 }
               },
-              child: const Text('រក្សាទុក (Save)'),
+              child: const Text('រក្សាទុក'),
             ),
           ],
         ),
@@ -132,7 +132,7 @@ class _AdminDishesScreenState extends ConsumerState<AdminDishesScreen> {
     return Scaffold(
       backgroundColor: AppTheme.backgroundColor,
       appBar: AppBar(
-        title: const Text('គ្រប់គ្រងមុខម្ហូប (Dishes Management)'),
+        title: const Text('គ្រប់គ្រងមុខម្ហូប'),
         actions: [
           IconButton(
             icon: const Icon(Icons.refresh),
@@ -149,7 +149,7 @@ class _AdminDishesScreenState extends ConsumerState<AdminDishesScreen> {
               controller: _searchController,
               onChanged: (val) => setState(() => _searchQuery = val.trim().toLowerCase()),
               decoration: InputDecoration(
-                hintText: 'ស្វែងរកមុខម្ហូបតាមឈ្មោះ (Search by dish name)...',
+                hintText: 'ស្វែងរកមុខម្ហូបតាមឈ្មោះ...',
                 prefixIcon: const Icon(Icons.search, color: AppTheme.primaryColor),
                 suffixIcon: _searchQuery.isNotEmpty
                     ? IconButton(

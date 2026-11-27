@@ -58,7 +58,7 @@ class _KhqrPaymentScreenState extends ConsumerState<KhqrPaymentScreen> {
       _startAutoPolling();
       ScaffoldMessenger.of(context).showSnackBar(
         const SnackBar(
-          content: Text('បានបើកការពិនិត្យស្វ័យប្រវត្តិ (Auto-Check ON)'),
+          content: Text('បានបើកការពិនិត្យស្វ័យប្រវត្តិ'),
           backgroundColor: Color(0xFF0284C7),
           duration: Duration(seconds: 2),
         ),
@@ -67,7 +67,7 @@ class _KhqrPaymentScreenState extends ConsumerState<KhqrPaymentScreen> {
       _stopAutoPolling();
       ScaffoldMessenger.of(context).showSnackBar(
         const SnackBar(
-          content: Text('បានបិទការពិនិត្យស្វ័យប្រវត្តិ (Auto-Check OFF)'),
+          content: Text('បានបិទការពិនិត្យស្វ័យប្រវត្តិ'),
           backgroundColor: Colors.grey,
           duration: Duration(seconds: 2),
         ),
@@ -149,7 +149,7 @@ class _KhqrPaymentScreenState extends ConsumerState<KhqrPaymentScreen> {
       } else if (!silent && mounted) {
         ScaffoldMessenger.of(context).showSnackBar(
           const SnackBar(
-            content: Text('មិនទាន់ឃើញការទូទាត់នៅឡើយទេ។ សូមពិនិត្យមើល App ធនាគាររបស់អ្នក។ (Awaiting payment)'),
+            content: Text('មិនទាន់ឃើញការទូទាត់នៅឡើយទេ។ សូមពិនិត្យមើល App ធនាគាររបស់អ្នក។'),
             backgroundColor: Colors.orange,
             duration: Duration(seconds: 2),
           ),
@@ -182,7 +182,7 @@ class _KhqrPaymentScreenState extends ConsumerState<KhqrPaymentScreen> {
 
     ScaffoldMessenger.of(context).showSnackBar(
       const SnackBar(
-        content: Text('🎉 ការទូទាត់តាម Bakong KHQR ទទួលបានជោគជ័យ! (Payment Successful)'),
+        content: Text('🎉 ការទូទាត់តាម Bakong KHQR ទទួលបានជោគជ័យ!'),
         backgroundColor: Colors.green,
         duration: Duration(seconds: 2),
       ),
@@ -257,13 +257,13 @@ class _KhqrPaymentScreenState extends ConsumerState<KhqrPaymentScreen> {
 
                   // Merchant Details
                   const Text(
-                    'ភោជនីយដ្ឋាន ភូមិយើង (Phum Yeung Restaurant)',
+                    'ភោជនីយដ្ឋាន ភូមិយើង',
                     textAlign: TextAlign.center,
                     style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16, color: Color(0xFF1E293B)),
                   ),
                   const SizedBox(height: 4),
                   Text(
-                    'លេខវិក្កយបត្រ (Bill): #${widget.order.id}',
+                    'លេខវិក្កយបត្រ: #${widget.order.id}',
                     style: const TextStyle(color: Color(0xFF64748B), fontSize: 13, fontWeight: FontWeight.w500),
                   ),
 
@@ -331,7 +331,7 @@ class _KhqrPaymentScreenState extends ConsumerState<KhqrPaymentScreen> {
                           Icon(Icons.check_circle, color: Colors.green, size: 18),
                           SizedBox(width: 8),
                           Text(
-                            'បានទូទាត់រួចរាល់ (Payment Confirmed)',
+                            'បានទូទាត់រួចរាល់',
                             style: TextStyle(color: Colors.green, fontWeight: FontWeight.bold),
                           ),
                         ],
@@ -392,7 +392,7 @@ class _KhqrPaymentScreenState extends ConsumerState<KhqrPaymentScreen> {
                     SizedBox(width: 10),
                     Flexible(
                       child: Text(
-                        'កំពុងពិនិត្យស្វ័យប្រវត្តិរៀងរាល់ ៨ វិនាទីម្តង... (Auto Active)',
+                        'កំពុងពិនិត្យស្វ័យប្រវត្តិរៀងរាល់ ៨ វិនាទីម្តង...',
                         style: TextStyle(
                           fontSize: 12,
                           color: Color(0xFF1D4ED8),
@@ -429,7 +429,7 @@ class _KhqrPaymentScreenState extends ConsumerState<KhqrPaymentScreen> {
                             )
                           : const Icon(Icons.touch_app_outlined, size: 20),
                       label: Text(
-                        _isVerifying ? 'កំពុងឆែក...' : 'ពិនិត្យដោយដៃ\n(Manual)',
+                        _isVerifying ? 'កំពុងឆែក...' : 'ពិនិត្យដោយដៃ\n',
                         textAlign: TextAlign.center,
                         style: const TextStyle(fontSize: 13, fontWeight: FontWeight.bold, height: 1.2),
                       ),
@@ -470,7 +470,7 @@ class _KhqrPaymentScreenState extends ConsumerState<KhqrPaymentScreen> {
             TextButton.icon(
               onPressed: () => context.pop(),
               icon: const Icon(Icons.arrow_back, size: 18),
-              label: const Text('ត្រឡប់ក្រោយ (Back to Checkout)'),
+              label: const Text('ត្រឡប់ក្រោយ'),
             ),
 
             const SizedBox(height: 16),

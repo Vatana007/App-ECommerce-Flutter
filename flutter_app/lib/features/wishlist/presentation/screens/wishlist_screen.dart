@@ -17,7 +17,7 @@ class WishlistScreen extends ConsumerWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text('ទំនិញដែលបានរក្សាទុក (Wishlist)'),
+        title: const Text('ទំនិញដែលបានរក្សាទុក'),
         actions: [
           if (wishlist.isNotEmpty)
             IconButton(

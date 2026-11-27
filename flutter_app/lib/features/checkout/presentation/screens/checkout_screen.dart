@@ -24,14 +24,14 @@ class CheckoutScreen extends ConsumerWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text('ការទូទាត់ប្រាក់ (Checkout)'),
+        title: const Text('ការទូទាត់ប្រាក់'),
       ),
       body: SingleChildScrollView(
         padding: const EdgeInsets.all(16),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            _sectionTitle('១. អាសយដ្ឋានដឹកជញ្ជូន (Delivery Address)'),
+            _sectionTitle('១. អាសយដ្ឋានដឹកជញ្ជូន'),
             const SizedBox(height: 8),
             Container(
               padding: const EdgeInsets.all(16),
@@ -78,14 +78,14 @@ class CheckoutScreen extends ConsumerWidget {
 
             const SizedBox(height: 20),
 
-            _sectionTitle('២. ជម្រើសសេវាដឹក (Shipping Method)'),
+            _sectionTitle('២. ជម្រើសសេវាដឹក'),
             const SizedBox(height: 8),
             _shippingOptionTile(
               context: context,
               ref: ref,
               option: const ShippingOption(
                 id: 'standard',
-                title: 'សេវាធម្មតា (Standard Delivery)',
+                title: 'សេវាធម្មតា',
                 description: 'ដឹកជញ្ជូនរហ័សទូទាំងប្រទេស (1 - 2 ថ្ងៃ)',
                 fee: 0.00,
                 estimatedTime: '1 - 2 ថ្ងៃ',
@@ -98,7 +98,7 @@ class CheckoutScreen extends ConsumerWidget {
               ref: ref,
               option: const ShippingOption(
                 id: 'express',
-                title: 'សេវាបន្ទាន់ (Express 2 Hours Delivery)',
+                title: 'សេវាបន្ទាន់',
                 description: 'ដឹកជូនក្នុងរាជធានីភ្នំពេញ ក្រោម 2 ម៉ោង',
                 fee: 3.00,
                 estimatedTime: '2 ម៉ោង',
@@ -108,7 +108,7 @@ class CheckoutScreen extends ConsumerWidget {
 
             const SizedBox(height: 20),
 
-            _sectionTitle('៣. វិធីសាស្រ្តទូទាត់ប្រាក់ (Payment Method)'),
+            _sectionTitle('៣. វិធីសាស្រ្តទូទាត់ប្រាក់'),
             const SizedBox(height: 8),
 
             _paymentMethodTile(
@@ -128,7 +128,7 @@ class CheckoutScreen extends ConsumerWidget {
               method: PaymentMethod.cod,
               icon: Icons.local_shipping_outlined,
               iconColor: Colors.teal,
-              title: 'ទូទាត់ប្រាក់ពេលទំនិញមកដល់ (Cash on Delivery)',
+              title: 'ទូទាត់ប្រាក់ពេលទំនិញមកដល់',
               subtitle: 'ពិនិត្យទំនិញរួច ទើបប្រគល់ប្រាក់ជូនអ្នកដឹកជញ្ជូន',
               isSelected: checkoutState.paymentMethod == PaymentMethod.cod,
             ),
@@ -139,14 +139,14 @@ class CheckoutScreen extends ConsumerWidget {
               method: PaymentMethod.card,
               icon: Icons.credit_card,
               iconColor: Colors.blueAccent,
-              title: 'កាតធនាគារ (Visa / Mastercard)',
+              title: 'កាតធនាគារ',
               subtitle: 'ទូទាត់តាមកាតឥណទាន ឬឥណពន្ធ',
               isSelected: checkoutState.paymentMethod == PaymentMethod.card,
             ),
 
             const SizedBox(height: 20),
 
-            _sectionTitle('៤. សង្ខេបការចំណាយ (Order Summary)'),
+            _sectionTitle('៤. សង្ខេបការចំណាយ'),
             const SizedBox(height: 8),
             Container(
               padding: const EdgeInsets.all(16),
@@ -157,7 +157,7 @@ class CheckoutScreen extends ConsumerWidget {
               ),
               child: Column(
                 children: [
-                  _summaryRow('តម្លៃទំនិញសរុប (Subtotal):', Money(amount: subtotal).format(targetCurrency: Currency.usd)),
+                  _summaryRow('តម្លៃទំនិញសរុប:', Money(amount: subtotal).format(targetCurrency: Currency.usd)),
                   if (discount > 0) ...[
                     const SizedBox(height: 8),
                     _summaryRow(
@@ -168,7 +168,7 @@ class CheckoutScreen extends ConsumerWidget {
                   ],
                   const SizedBox(height: 8),
                   _summaryRow(
-                    'ថ្លៃដឹកជញ្ជូន (Shipping Fee):',
+                    'ថ្លៃដឹកជញ្ជូន:',
                     Money(amount: shippingFee).format(targetCurrency: Currency.usd),
                   ),
                   const Divider(height: 24),
@@ -243,8 +243,8 @@ class CheckoutScreen extends ConsumerWidget {
                           const SizedBox(width: 8),
                           Text(
                             checkoutState.paymentMethod == PaymentMethod.khqr
-                                ? 'បន្តទៅកាន់ការទូទាត់ KHQR (\$${finalTotal.toStringAsFixed(2)})'
-                                : 'បញ្ជាក់ការកុម្ម៉ង់ (\$${finalTotal.toStringAsFixed(2)})',
+                                ? 'បន្តទៅកាន់ការទូទាត់ KHQR (\$${finalTotal.toStringAsFixed})'
+                                : 'បញ្ជាក់ការកុម្ម៉ង់ (\$${finalTotal.toStringAsFixed})',
                             style: const TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
                           ),
                         ],
@@ -375,7 +375,7 @@ class CheckoutScreen extends ConsumerWidget {
                             borderRadius: BorderRadius.circular(4),
                           ),
                           child: const Text(
-                            'ពេញនិយម (Popular)',
+                            'ពេញនិយម',
                             style: TextStyle(color: Color(0xFFE1192A), fontSize: 9, fontWeight: FontWeight.bold),
                           ),
                         ),
@@ -409,23 +409,23 @@ class CheckoutScreen extends ConsumerWidget {
             children: [
               TextField(
                 controller: nameCtrl,
-                decoration: const InputDecoration(labelText: 'ឈ្មោះអ្នកទទួល (Full Name)'),
+                decoration: const InputDecoration(labelText: 'ឈ្មោះអ្នកទទួល'),
               ),
               const SizedBox(height: 10),
               TextField(
                 controller: phoneCtrl,
-                decoration: const InputDecoration(labelText: 'លេខទូរស័ព្ទ (Phone Number)'),
+                decoration: const InputDecoration(labelText: 'លេខទូរស័ព្ទ'),
                 keyboardType: TextInputType.phone,
               ),
               const SizedBox(height: 10),
               TextField(
                 controller: cityCtrl,
-                decoration: const InputDecoration(labelText: 'រាជធានី / ខេត្ត (City / Province)'),
+                decoration: const InputDecoration(labelText: 'រាជធានី / ខេត្ត'),
               ),
               const SizedBox(height: 10),
               TextField(
                 controller: streetCtrl,
-                decoration: const InputDecoration(labelText: 'ផ្ទះលេខ / ផ្លូវ (Street Address)'),
+                decoration: const InputDecoration(labelText: 'ផ្ទះលេខ / ផ្លូវ'),
               ),
             ],
           ),

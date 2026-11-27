@@ -153,14 +153,14 @@ class OrderDetailScreen extends ConsumerWidget {
                   const Divider(height: 20),
                   _infoRow(
                     'ស្ថានភាពបង់ប្រាក់:',
-                    order.paymentStatus == PaymentStatus.paid ? 'បានបង់ប្រាក់រួច (PAID)' : 'មិនទាន់បង់ប្រាក់ (UNPAID)',
+                    order.paymentStatus == PaymentStatus.paid ? 'បានបង់ប្រាក់រួច' : 'មិនទាន់បង់ប្រាក់',
                     textColor: order.paymentStatus == PaymentStatus.paid ? Colors.green : Colors.orange,
                   ),
                   const Divider(height: 20),
-                  _infoRow('តម្លៃទំនិញ (Subtotal):', '\$${order.subtotal.toStringAsFixed(2)}'),
+                  _infoRow('តម្លៃទំនិញ:', '\$${order.subtotal.toStringAsFixed(2)}'),
                   if (order.discount > 0) ...[
                     const SizedBox(height: 8),
-                    _infoRow('បញ្ចុះតម្លៃ (Discount):', '-\$${order.discount.toStringAsFixed(2)}', textColor: Colors.green),
+                    _infoRow('បញ្ចុះតម្លៃ:', '-\$${order.discount.toStringAsFixed(2)}', textColor: Colors.green),
                   ],
                   const SizedBox(height: 8),
                   _infoRow('ថ្លៃដឹកជញ្ជូន:', '\$${order.shippingFee.toStringAsFixed(2)}'),
@@ -213,7 +213,7 @@ class OrderDetailScreen extends ConsumerWidget {
                 ),
                 icon: const Icon(Icons.arrow_back),
                 label: const Text(
-                  'ត្រឡប់ទៅទំព័រដើម (Back to Home)',
+                  'ត្រឡប់ទៅទំព័រដើម',
                   style: TextStyle(fontWeight: FontWeight.bold, fontSize: 14),
                 ),
                 onPressed: () {
@@ -273,7 +273,7 @@ class OrderDetailScreen extends ConsumerWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          const Text('ដំណាក់កាលដឹកជញ្ជូន (Tracking Progress)', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 13)),
+          const Text('ដំណាក់កាលដឹកជញ្ជូន', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 13)),
           const SizedBox(height: 16),
           Row(
             children: List.generate(steps.length * 2 - 1, (i) {

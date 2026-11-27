@@ -23,7 +23,7 @@ class ProfileScreen extends ConsumerWidget {
     return Scaffold(
       backgroundColor: AppTheme.backgroundColor,
       appBar: AppBar(
-        title: const Text('គណនី និងព័ត៌មានហាង (Account & Store)'),
+        title: const Text('គណនី និងព័ត៌មានហាង'),
       ),
       body: SingleChildScrollView(
         padding: const EdgeInsets.all(16),
@@ -64,7 +64,7 @@ class ProfileScreen extends ConsumerWidget {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: const [
                           Text(
-                            'គណនីអតិថិជន (Customer)',
+                            'គណនីអតិថិជន',
                             style: TextStyle(fontWeight: FontWeight.bold, fontSize: 14.5, color: AppTheme.textDark),
                           ),
                           SizedBox(height: 2),
@@ -178,7 +178,7 @@ class ProfileScreen extends ConsumerWidget {
                         ),
                         IconButton(
                           icon: const Icon(Icons.logout, color: Colors.redAccent, size: 20),
-                          tooltip: 'ចាកចេញពីគណនី (Logout)',
+                          tooltip: 'ចាកចេញពីគណនី',
                           onPressed: () => _confirmCustomerLogout(context, ref),
                         ),
                       ],
@@ -346,7 +346,7 @@ class ProfileScreen extends ConsumerWidget {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: const [
                           Text(
-                            'តាមដានការកុម្ម៉ង់ (Track Orders)',
+                            'តាមដានការកុម្ម៉ង់',
                             style: TextStyle(fontWeight: FontWeight.bold, fontSize: 14.5, color: AppTheme.textDark),
                           ),
                           SizedBox(height: 2),
@@ -394,7 +394,7 @@ class ProfileScreen extends ConsumerWidget {
                           Icon(Icons.admin_panel_settings, color: AppTheme.secondaryLight, size: 24),
                           SizedBox(width: 8),
                           Text(
-                            'ផ្ទាំងគ្រប់គ្រងហាង (Admin Portal)',
+                            'ផ្ទាំងគ្រប់គ្រងហាង',
                             style: TextStyle(
                               color: Colors.white,
                               fontWeight: FontWeight.bold,
@@ -418,7 +418,7 @@ class ProfileScreen extends ConsumerWidget {
                   ),
                   const SizedBox(height: 8),
                   const Text(
-                    'គ្រប់គ្រងការកុម្ម៉ង់ផ្ទាល់ (Live Orders), កែប្រែតម្លៃមុខម្ហូប (Dishes) និងការកំណត់ហាង (Store Settings) ក្នុង App តែមួយ។',
+                    'គ្រប់គ្រងការកុម្ម៉ង់ផ្ទាល់, កែប្រែតម្លៃមុខម្ហូប និងការកំណត់ហាង ក្នុង App តែមួយ។',
                     style: TextStyle(color: Colors.white70, fontSize: 12, height: 1.4),
                   ),
                   const SizedBox(height: 14),
@@ -465,7 +465,7 @@ class ProfileScreen extends ConsumerWidget {
                             ),
                             icon: const Icon(Icons.login, size: 18),
                             label: const Text(
-                              'ចូលគ្រប់គ្រង (Admin Login)',
+                              'ចូលគ្រប់គ្រង',
                               style: TextStyle(fontWeight: FontWeight.bold, fontSize: 13),
                             ),
                             onPressed: () => AdminLoginDialog.show(context),
@@ -492,7 +492,7 @@ class ProfileScreen extends ConsumerWidget {
                   _menuItem(
                     icon: Icons.delivery_dining,
                     iconColor: AppTheme.primaryColor,
-                    title: 'តាមដានការកុម្ម៉ង់ (Track Order)',
+                    title: 'តាមដានការកុម្ម៉ង់',
                     subtitle: 'ពិនិត្យមើលស្ថានភាពនៃការដឹកជញ្ជូនអាហារ',
                     onTap: () => context.push('/orders'),
                   ),
@@ -500,7 +500,7 @@ class ProfileScreen extends ConsumerWidget {
                   _menuItem(
                     icon: Icons.restaurant_menu,
                     iconColor: AppTheme.secondaryColor,
-                    title: 'បញ្ជីមុខម្ហូបខ្មែរទាំងអស់ (Full Menu)',
+                    title: 'បញ្ជីមុខម្ហូបខ្មែរទាំងអស់',
                     subtitle: '១៦០ មុខម្ហូបបុរាណខ្មែរឈ្ងុយឆ្ងាញ់',
                     onTap: () => context.push('/catalog'),
                   ),
@@ -508,7 +508,7 @@ class ProfileScreen extends ConsumerWidget {
                   _menuItem(
                     icon: Icons.store_mall_directory,
                     iconColor: AppTheme.accentColor,
-                    title: 'អំពីភោជនីយដ្ឋាន ភូមិយើង (About Us)',
+                    title: 'អំពីភោជនីយដ្ឋាន ភូមិយើង',
                     subtitle: 'ផ្ទះបាយខ្មែរអនឡាញ បម្រើរសជាតិខ្មែរពិតៗ',
                     onTap: () {
                       _showAboutDialog(context);
@@ -518,7 +518,7 @@ class ProfileScreen extends ConsumerWidget {
                   _menuItem(
                     icon: Icons.location_on_outlined,
                     iconColor: Colors.redAccent,
-                    title: 'ទីតាំងផ្ទះបាយ (Location)',
+                    title: 'ទីតាំងផ្ទះបាយ',
                     subtitle: 'ផ្លូវ 271 កែងផ្លូវ 371 សង្កាត់បឹងទំពុន រាជធានីភ្នំពេញ',
                     onTap: () {
                       ScaffoldMessenger.of(context).showSnackBar(
@@ -533,7 +533,7 @@ class ProfileScreen extends ConsumerWidget {
                   _menuItem(
                     icon: Icons.headset_mic_outlined,
                     iconColor: Colors.teal,
-                    title: 'ផ្នែកបម្រើអតិថិជន (Customer Support)',
+                    title: 'ផ្នែកបម្រើអតិថិជន',
                     subtitle: 'Telegram: @phum_yeung_support | ទូរស័ព្ទ: 012 345 678',
                     onTap: () {
                       ScaffoldMessenger.of(context).showSnackBar(
@@ -552,12 +552,12 @@ class ProfileScreen extends ConsumerWidget {
 
             // Footer branding
             const Text(
-              'ភោជនីយដ្ឋាន ភូមិយើង (Phum Yeung Restaurant)',
+              'ភោជនីយដ្ឋាន ភូមិយើង',
               style: TextStyle(color: AppTheme.textDark, fontWeight: FontWeight.bold, fontSize: 13),
             ),
             const SizedBox(height: 2),
             const Text(
-              'កំណែប្រែ App Version 1.0.0 (All-in-One Customer & Admin App)',
+              'កំណែប្រែ App Version 1.0.0',
               style: TextStyle(color: AppTheme.textMuted, fontSize: 11),
             ),
             const SizedBox(height: 20),

@@ -34,11 +34,11 @@ class _ProductDetailScreenState extends ConsumerState<ProductDetailScreen> {
   String _getSpiceLabel(String spice) {
     switch (spice.toLowerCase()) {
       case 'hot':
-        return '🌶️ ហិរ (Hot)';
+        return '🌶️ ហិរ';
       case 'extra':
-        return '🌶️🌶️ ហិរខ្លាំង (Extra)';
+        return '🌶️🌶️ ហិរខ្លាំង';
       default:
-        return '🌿 ហិរតិច (Mild)';
+        return '🌿 ហិរតិច';
     }
   }
 
@@ -107,7 +107,7 @@ class _ProductDetailScreenState extends ConsumerState<ProductDetailScreen> {
                           icon: const Icon(Icons.share_outlined, color: Colors.black87),
                           onPressed: () {
                             ScaffoldMessenger.of(context).showSnackBar(
-                              const SnackBar(content: Text('បានចម្លងតំណភ្ជាប់មុខម្ហូប (Copied link)')),
+                              const SnackBar(content: Text('បានចម្លងតំណភ្ជាប់មុខម្ហូប')),
                             );
                           },
                         ),
@@ -245,7 +245,7 @@ class _ProductDetailScreenState extends ConsumerState<ProductDetailScreen> {
                           Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
-                              const Text('ចំនួនកុម្ម៉ង់ (Quantity):', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 14)),
+                              const Text('ចំនួនកុម្ម៉ង់:', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 14)),
                               Row(
                                 children: [
                                   IconButton(
@@ -269,7 +269,7 @@ class _ProductDetailScreenState extends ConsumerState<ProductDetailScreen> {
 
                           // Description
                           const Text(
-                            'ការពិពណ៌នាមុខម្ហូប (Description)',
+                            'ការពិពណ៌នាមុខម្ហូប',
                             style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15),
                           ),
                           const SizedBox(height: 8),
@@ -351,7 +351,7 @@ class _ProductDetailScreenState extends ConsumerState<ProductDetailScreen> {
                                   },
                             icon: const Icon(Icons.add_shopping_cart, size: 20),
                             label: const Text(
-                              'បញ្ចូលទៅក្នុងកន្ត្រក (Add to Cart)',
+                              'បញ្ចូលទៅក្នុងកន្ត្រក',
                               style: TextStyle(fontWeight: FontWeight.bold, fontSize: 14),
                             ),
                           ),

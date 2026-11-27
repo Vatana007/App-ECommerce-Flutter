@@ -50,14 +50,14 @@ class CheckoutState {
 
   const CheckoutState({
     this.address = const ShippingAddress(
-      name: 'អតិថិជន (Customer)',
+      name: 'អតិថិជន',
       phone: '012 888 999',
-      city: 'ភ្នំពេញ (Phnom Penh)',
+      city: 'ភ្នំពេញ',
       street: '#123, ផ្លូវ 271, Boeng Tumpun',
     ),
     this.shippingOption = const ShippingOption(
       id: 'standard',
-      title: 'ដឹកជញ្ជូនធម្មតា (Standard Delivery)',
+      title: 'ដឹកជញ្ជូនធម្មតា',
       description: 'ដឹកជញ្ជូនរហ័សទូទាំងរាជធានី និងខេត្ត',
       fee: 0.00,
       estimatedTime: '1 - 2 ថ្ងៃ',

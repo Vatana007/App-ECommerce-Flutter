@@ -325,16 +325,16 @@ class _AuthScreenState extends ConsumerState<AuthScreen> {
 
     switch (_mode) {
       case AuthMode.login:
-        title = 'ចូលគណនី (Sign In)';
+        title = 'ចូលគណនី';
         subtitle = 'សូមបញ្ចូលអ៊ីមែល និងពាក្យសម្ងាត់របស់អ្នកដើម្បីចូលប្រើប្រាស់';
         break;
       case AuthMode.register:
-        title = 'ចុះឈ្មោះគណនីថ្មី (Register)';
+        title = 'ចុះឈ្មោះគណនីថ្មី';
         subtitle = 'បង្កើតគណនីជាមួយយើងដើម្បីទទួលបានការផ្ដល់ជូនពិសេស';
         break;
       case AuthMode.verify:
         final email = state.unverifiedEmail ?? _registerEmailController.text;
-        title = 'ផ្ទៀងផ្ទាត់លេខកូដ (Verify Code)';
+        title = 'ផ្ទៀងផ្ទាត់លេខកូដ';
         subtitle = 'សូមបញ្ចូលលេខកូដសម្ងាត់ ៦ ខ្ទង់ដែលបានផ្ញើទៅកាន់ $email';
         break;
     }
@@ -519,7 +519,7 @@ class _AuthScreenState extends ConsumerState<AuthScreen> {
       child: Column(
         children: [
           const Text(
-            '⚠️ ការផ្ញើសំបុត្រពិតប្រាកដ (Real Gmail OTP)',
+            '⚠️ ការផ្ញើសំបុត្រពិតប្រាកដ',
             style: TextStyle(
               fontSize: 12,
               fontWeight: FontWeight.bold,
@@ -569,7 +569,7 @@ class _AuthScreenState extends ConsumerState<AuthScreen> {
       children: [
         _buildTextField(
           controller: _loginEmailController,
-          label: 'អ៊ីមែល (Email)',
+          label: 'អ៊ីមែល',
           hintText: 'example@gmail.com',
           icon: Icons.email_outlined,
           keyboardType: TextInputType.emailAddress,
@@ -577,7 +577,7 @@ class _AuthScreenState extends ConsumerState<AuthScreen> {
         const SizedBox(height: 14),
         _buildTextField(
           controller: _loginPasswordController,
-          label: 'ពាក្យសម្ងាត់ (Password)',
+          label: 'ពាក្យសម្ងាត់',
           hintText: '••••••••',
           icon: Icons.lock_outline,
           obscureText: !_showLoginPassword,
@@ -611,7 +611,7 @@ class _AuthScreenState extends ConsumerState<AuthScreen> {
                   child: CircularProgressIndicator(strokeWidth: 2, color: Colors.white),
                 )
               : const Text(
-                  'ចូលប្រើប្រាស់ (Sign In)',
+                  'ចូលប្រើប្រាស់',
                   style: TextStyle(fontWeight: FontWeight.bold, fontSize: 14.5),
                 ),
         ),
@@ -647,14 +647,14 @@ class _AuthScreenState extends ConsumerState<AuthScreen> {
       children: [
         _buildTextField(
           controller: _registerNameController,
-          label: 'ឈ្មោះពេញ (Full Name)',
-          hintText: 'សុខ សាន (Sok San)',
+          label: 'ឈ្មោះពេញ',
+          hintText: 'សុខ សាន',
           icon: Icons.person_outline,
         ),
         const SizedBox(height: 12),
         _buildTextField(
           controller: _registerEmailController,
-          label: 'អ៊ីមែល (Email)',
+          label: 'អ៊ីមែល',
           hintText: 'example@gmail.com',
           icon: Icons.email_outlined,
           keyboardType: TextInputType.emailAddress,
@@ -662,7 +662,7 @@ class _AuthScreenState extends ConsumerState<AuthScreen> {
         const SizedBox(height: 12),
         _buildTextField(
           controller: _registerPasswordController,
-          label: 'ពាក្យសម្ងាត់ (Password)',
+          label: 'ពាក្យសម្ងាត់',
           hintText: 'យ៉ាងតិច ៦ តួអក្សរ',
           icon: Icons.lock_outline,
           obscureText: !_showRegisterPassword,
@@ -682,7 +682,7 @@ class _AuthScreenState extends ConsumerState<AuthScreen> {
         const SizedBox(height: 12),
         _buildTextField(
           controller: _registerPhoneController,
-          label: 'លេខទូរស័ព្ទ (Phone Number)',
+          label: 'លេខទូរស័ព្ទ',
           hintText: '012 345 678',
           icon: Icons.phone_outlined,
           keyboardType: TextInputType.phone,
@@ -690,7 +690,7 @@ class _AuthScreenState extends ConsumerState<AuthScreen> {
         const SizedBox(height: 12),
         _buildTextField(
           controller: _registerAddressController,
-          label: 'អាសយដ្ឋានដឹកជញ្ជូន (Delivery Address)',
+          label: 'អាសយដ្ឋានដឹកជញ្ជូន',
           hintText: 'ផ្ទះលេខ..., ផ្លូវ..., សង្កាត់..., រាជធានីភ្នំពេញ',
           icon: Icons.location_on_outlined,
         ),
@@ -711,7 +711,7 @@ class _AuthScreenState extends ConsumerState<AuthScreen> {
                   child: CircularProgressIndicator(strokeWidth: 2, color: Colors.white),
                 )
               : const Text(
-                  'ចុះឈ្មោះឥឡូវនេះ (Create Account)',
+                  'ចុះឈ្មោះឥឡូវនេះ',
                   style: TextStyle(fontWeight: FontWeight.bold, fontSize: 14.5),
                 ),
         ),
@@ -802,7 +802,7 @@ class _AuthScreenState extends ConsumerState<AuthScreen> {
                   child: CircularProgressIndicator(strokeWidth: 2, color: Colors.white),
                 )
               : const Text(
-                  'ផ្ទៀងផ្ទាត់ (Verify & Continue)',
+                  'ផ្ទៀងផ្ទាត់',
                   style: TextStyle(fontWeight: FontWeight.bold, fontSize: 14.5),
                 ),
         ),
@@ -822,7 +822,7 @@ class _AuthScreenState extends ConsumerState<AuthScreen> {
                 }
               },
               child: const Text(
-                'ផ្ញើឡើងវិញ (Resend)',
+                'ផ្ញើឡើងវិញ',
                 style: TextStyle(
                   color: AppTheme.secondaryColor,
                   fontWeight: FontWeight.bold,
@@ -837,7 +837,7 @@ class _AuthScreenState extends ConsumerState<AuthScreen> {
           child: TextButton(
             onPressed: () => _switchMode(AuthMode.login),
             child: const Text(
-              '← ត្រឡប់ទៅចូលគណនី (Back to Sign In)',
+              '← ត្រឡប់ទៅចូលគណនី',
               style: TextStyle(color: AppTheme.textMuted, fontSize: 12.5),
             ),
           ),

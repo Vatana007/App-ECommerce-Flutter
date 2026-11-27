@@ -31,7 +31,7 @@ class _CartScreenState extends ConsumerState<CartScreen> {
     return Scaffold(
       backgroundColor: AppTheme.backgroundColor,
       appBar: AppBar(
-        title: const Text('កន្ត្រកកុម្ម៉ង់ (Your Order Cart)'),
+        title: const Text('កន្ត្រកកុម្ម៉ង់'),
         actions: [
           if (!cartState.isEmpty)
             IconButton(
@@ -64,7 +64,7 @@ class _CartScreenState extends ConsumerState<CartScreen> {
                     ),
                     onPressed: () => context.go('/catalog'),
                     icon: const Icon(Icons.restaurant_menu),
-                    label: const Text('មើលបញ្ជីមុខម្ហូប (View Menu)'),
+                    label: const Text('មើលបញ្ជីមុខម្ហូប'),
                   ),
                 ],
               ),
@@ -176,7 +176,7 @@ class _CartScreenState extends ConsumerState<CartScreen> {
                           controller: _promoController,
                           textCapitalization: TextCapitalization.characters,
                           decoration: InputDecoration(
-                            hintText: 'កូដបញ្ចុះតម្លៃ (e.g. PHUM10, KHMER20)',
+                            hintText: 'កូដបញ្ចុះតម្លៃ',
                             hintStyle: const TextStyle(fontSize: 13, color: Color(0xFF94A3B8)),
                             filled: true,
                             fillColor: Colors.white,
@@ -249,7 +249,7 @@ class _CartScreenState extends ConsumerState<CartScreen> {
                     ),
                     child: Column(
                       children: [
-                        _costRow('តម្លៃទំនិញសរុប (Subtotal):', Money(amount: cartState.subtotal).format(targetCurrency: Currency.usd)),
+                        _costRow('តម្លៃទំនិញសរុប:', Money(amount: cartState.subtotal).format(targetCurrency: Currency.usd)),
                         if (cartState.discountAmount > 0) ...[
                           const SizedBox(height: 8),
                           _costRow(
@@ -259,7 +259,7 @@ class _CartScreenState extends ConsumerState<CartScreen> {
                           ),
                         ],
                         const SizedBox(height: 8),
-                        _costRow('ថ្លៃសេវាដឹក (Standard Delivery):', '\$0.00'),
+                        _costRow('ថ្លៃសេវាដឹក:', '\$0.00'),
                         const Divider(height: 24),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -267,7 +267,7 @@ class _CartScreenState extends ConsumerState<CartScreen> {
                             Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
-                                const Text('សរុបទាំងអស់ (Total):', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 14)),
+                                const Text('សរុបទាំងអស់:', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 14)),
                                 Text(
                                   Money(amount: cartState.totalPrice).format(targetCurrency: Currency.khr),
                                   style: const TextStyle(color: Colors.grey, fontSize: 12),
@@ -303,7 +303,7 @@ class _CartScreenState extends ConsumerState<CartScreen> {
                       onPressed: () => context.push('/checkout'),
                       icon: const Icon(Icons.arrow_forward),
                       label: const Text(
-                        'បន្តទៅកាន់ការទូទាត់ប្រាក់ (Proceed to Checkout)',
+                        'បន្តទៅកាន់ការទូទាត់ប្រាក់',
                         style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15),
                       ),
                     ),

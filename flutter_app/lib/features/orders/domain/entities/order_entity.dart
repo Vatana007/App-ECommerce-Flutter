@@ -172,17 +172,17 @@ class OrderEntity {
   String get statusDisplay {
     switch (status) {
       case OrderStatus.pending:
-        return 'រង់ចាំការបញ្ជាក់ (Pending)';
+        return 'រង់ចាំការបញ្ជាក់';
       case OrderStatus.preparing:
       case OrderStatus.processing:
-        return 'ផ្ទះបាយកំពុងចម្អិន (Preparing)';
+        return 'ផ្ទះបាយកំពុងចម្អិន';
       case OrderStatus.delivering:
       case OrderStatus.shipped:
-        return 'កំពុងដឹកជញ្ជូន (Out for Delivery)';
+        return 'កំពុងដឹកជញ្ជូន';
       case OrderStatus.delivered:
-        return 'បានប្រគល់ជូនជោគជ័យ (Delivered)';
+        return 'បានប្រគល់ជូនជោគជ័យ';
       case OrderStatus.cancelled:
-        return 'បានលុបចោល (Cancelled)';
+        return 'បានលុបចោល';
     }
   }
 
@@ -191,9 +191,9 @@ class OrderEntity {
       case PaymentMethod.khqr:
         return 'Bakong KHQR (ABA / ACLEDA / Wing)';
       case PaymentMethod.cod:
-        return 'ទូទាត់ប្រាក់ពេលទំនិញមកដល់ (Cash on Delivery)';
+        return 'ទូទាត់ប្រាក់ពេលទំនិញមកដល់';
       case PaymentMethod.card:
-        return 'កាតធនាគារ (Credit/Debit Card)';
+        return 'កាតធនាគារ';
     }
   }
 

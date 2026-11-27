@@ -82,7 +82,7 @@ class _OrdersScreenState extends ConsumerState<OrdersScreen> {
       backgroundColor: AppTheme.backgroundColor,
       appBar: AppBar(
         title: const Text(
-          'តាមដានការកុម្ម៉ង់ (Track Order)',
+          'តាមដានការកុម្ម៉ង់',
           style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
         ),
       ),
@@ -114,14 +114,14 @@ class _OrdersScreenState extends ConsumerState<OrdersScreen> {
                       Icon(Icons.search, color: AppTheme.primaryColor, size: 20),
                       SizedBox(width: 8),
                       Text(
-                        'ស្វែងរកការកុម្ម៉ង់របស់អ្នក (Track by ID)',
+                        'ស្វែងរកការកុម្ម៉ង់របស់អ្នក',
                         style: TextStyle(fontWeight: FontWeight.bold, fontSize: 14, color: AppTheme.textDark),
                       ),
                     ],
                   ),
                   const SizedBox(height: 6),
                   const Text(
-                    'បញ្ចូលលេខសម្គាល់វិក្កយបត្រ (Order ID) ដើម្បីពិនិត្យមើលស្ថានភាពនៃការដឹកជញ្ជូន។',
+                    'បញ្ចូលលេខសម្គាល់វិក្កយបត្រ ដើម្បីពិនិត្យមើលស្ថានភាពនៃការដឹកជញ្ជូន។',
                     style: TextStyle(color: AppTheme.textMuted, fontSize: 12),
                   ),
                   const SizedBox(height: 14),
@@ -266,7 +266,7 @@ class _OrdersScreenState extends ConsumerState<OrdersScreen> {
                               const SizedBox(width: 8),
                               Expanded(
                                 child: Text(
-                                  '${order.items.length} មុខម្ហូប (${order.items.fold(0, (sum, i) => sum + i.quantity)} ចាន)',
+                                  '${order.items.length} មុខម្ហូប - សរុប ${order.items.fold(0, (sum, i) => sum + i.quantity)} ចាន',
                                   style: const TextStyle(fontSize: 13, fontWeight: FontWeight.w500),
                                 ),
                               ),

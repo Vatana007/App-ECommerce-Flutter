@@ -20,7 +20,7 @@ class CustomerUser {
   factory CustomerUser.fromJson(Map<String, dynamic> json, {String? token}) {
     return CustomerUser(
       id: json['id']?.toString() ?? json['_id']?.toString() ?? '',
-      name: json['name']?.toString() ?? 'អតិថិជន (Customer)',
+      name: json['name']?.toString() ?? 'អតិថិជន',
       email: json['email']?.toString() ?? '',
       phone: json['phone']?.toString() ?? '',
       address: json['address']?.toString() ?? '',

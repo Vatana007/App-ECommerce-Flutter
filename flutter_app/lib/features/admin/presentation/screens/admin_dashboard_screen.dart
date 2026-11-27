@@ -28,7 +28,7 @@ class AdminDashboardScreen extends ConsumerWidget {
             ),
             const SizedBox(width: 8),
             const Text(
-              'ផ្ទាំងគ្រប់គ្រង (Admin Dashboard)',
+              'ផ្ទាំងគ្រប់គ្រង',
               style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
             ),
           ],
@@ -135,7 +135,7 @@ class AdminDashboardScreen extends ConsumerWidget {
                 Row(
                   children: [
                     _metricCard(
-                      title: 'ចំណូលសរុប (Revenue)',
+                      title: 'ចំណូលសរុប',
                       value: Money(amount: totalRev).format(targetCurrency: Currency.usd),
                       subvalue: Money(amount: totalRev).format(targetCurrency: Currency.khr),
                       icon: Icons.payments,
@@ -143,7 +143,7 @@ class AdminDashboardScreen extends ConsumerWidget {
                     ),
                     const SizedBox(width: 12),
                     _metricCard(
-                      title: 'ការកុម្ម៉ង់ (Orders)',
+                      title: 'ការកុម្ម៉ង់',
                       value: '$totalOrders Orders',
                       subvalue: '$pendingOrders កំពុងរង់ចាំ',
                       icon: Icons.receipt_long,
@@ -155,7 +155,7 @@ class AdminDashboardScreen extends ConsumerWidget {
                 Row(
                   children: [
                     _metricCard(
-                      title: 'មុខម្ហូប (Dishes)',
+                      title: 'មុខម្ហូប',
                       value: '$totalDishes មុខ',
                       subvalue: '១៤ ប្រភេទមុខម្ហូប',
                       icon: Icons.restaurant_menu,
@@ -163,7 +163,7 @@ class AdminDashboardScreen extends ConsumerWidget {
                     ),
                     const SizedBox(width: 12),
                     _metricCard(
-                      title: 'ស្ថានភាពហាង (Status)',
+                      title: 'ស្ថានភាពហាង',
                       value: isOpen ? 'បើកទទួលការកុម្ម៉ង់' : 'បិទបណ្តោះអាសន្ន',
                       subvalue: 'ដឹកជូនទូទាំងភ្នំពេញ',
                       icon: Icons.storefront,
@@ -175,14 +175,14 @@ class AdminDashboardScreen extends ConsumerWidget {
                 const SizedBox(height: 24),
 
                 const Text(
-                  'មុខងារគ្រប់គ្រងសំខាន់ៗ (Admin Management)',
+                  'មុខងារគ្រប់គ្រងសំខាន់ៗ',
                   style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold, color: AppTheme.textDark),
                 ),
                 const SizedBox(height: 12),
 
                 // Management Navigation Tiles
                 _navTile(
-                  title: 'គ្រប់គ្រងការកុម្ម៉ង់ (Orders Management)',
+                  title: 'គ្រប់គ្រងការកុម្ម៉ង់',
                   subtitle: 'ពិនិត្យ និងប្តូរដំណាក់កាលដឹកជញ្ជូន Order (Pending ➡️ Preparing ➡️ Delivering)',
                   icon: Icons.delivery_dining,
                   iconColor: AppTheme.primaryColor,
@@ -192,7 +192,7 @@ class AdminDashboardScreen extends ConsumerWidget {
                 const SizedBox(height: 10),
 
                 _navTile(
-                  title: 'គ្រប់គ្រងមុខម្ហូប (Dishes Catalog & Prices)',
+                  title: 'គ្រប់គ្រងមុខម្ហូប',
                   subtitle: 'កែប្រែតម្លៃម្ហូប ប្តូរកម្រិតហិរ និងដាក់ក្នុងបញ្ជីមុខម្ហូបពិសេស',
                   icon: Icons.restaurant,
                   iconColor: AppTheme.secondaryColor,
@@ -202,7 +202,7 @@ class AdminDashboardScreen extends ConsumerWidget {
                 const SizedBox(height: 10),
 
                 _navTile(
-                  title: 'ការកំណត់ហាង (Store Settings & Fees)',
+                  title: 'ការកំណត់ហាង',
                   subtitle: 'បិទ/បើកហាង កំណត់ថ្លៃដឹក (\$1.50) អត្រាប្តូរប្រាក់ (4,100 ៛) និងសារជូនដំណឹង',
                   icon: Icons.tune,
                   iconColor: AppTheme.accentColor,
@@ -211,7 +211,7 @@ class AdminDashboardScreen extends ConsumerWidget {
                 const SizedBox(height: 10),
 
                 _navTile(
-                  title: 'ត្រឡប់ទៅទំព័រអតិថិជន (Customer View)',
+                  title: 'ត្រឡប់ទៅទំព័រអតិថិជន',
                   subtitle: 'មើលទំព័រដើម និងទិញអាហារដូចអតិថិជនទូទៅ',
                   icon: Icons.shopping_bag_outlined,
                   iconColor: Colors.deepPurple,

@@ -32,7 +32,7 @@ class _CatalogScreenState extends ConsumerState<CatalogScreen> {
     return Scaffold(
       backgroundColor: AppTheme.backgroundColor,
       appBar: AppBar(
-        title: const Text('បញ្ជីមុខម្ហូប (Food Menu)'),
+        title: const Text('បញ្ជីមុខម្ហូប'),
         actions: [
           Stack(
             alignment: Alignment.center,
@@ -72,7 +72,7 @@ class _CatalogScreenState extends ConsumerState<CatalogScreen> {
             child: TextField(
               controller: _searchController,
               decoration: InputDecoration(
-                hintText: 'ស្វែងរកមុខម្ហូប (Search dishes)...',
+                hintText: 'ស្វែងរកមុខម្ហូប...',
                 hintStyle: const TextStyle(fontSize: 14, color: Color(0xFF94A3B8)),
                 filled: true,
                 fillColor: Colors.white,
@@ -197,7 +197,7 @@ class _CatalogScreenState extends ConsumerState<CatalogScreen> {
                             ref.read(selectedCategoryIdProvider.notifier).select('all');
                             setState(() {});
                           },
-                          child: const Text('បង្ហាញទាំងអស់ (Show All)'),
+                          child: const Text('បង្ហាញទាំងអស់'),
                         ),
                       ],
                     ),

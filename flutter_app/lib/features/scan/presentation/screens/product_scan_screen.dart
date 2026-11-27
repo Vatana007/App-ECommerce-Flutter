@@ -204,7 +204,7 @@ class _ProductScanScreenState extends ConsumerState<ProductScanScreen>
                       Navigator.pop(ctx);
                       context.push('/product/${product.id}');
                     },
-                    child: const Text('មើលមុខម្ហូប (View Detail)'),
+                    child: const Text('មើលមុខម្ហូប'),
                   ),
                 ),
                 const SizedBox(width: 12),
@@ -249,7 +249,7 @@ class _ProductScanScreenState extends ConsumerState<ProductScanScreen>
         backgroundColor: Colors.transparent,
         elevation: 0,
         title: const Text(
-          'ស្កេនស្វែងរកមុខម្ហូប (Scan Food Code)',
+          'ស្កេនស្វែងរកមុខម្ហូប',
           style: TextStyle(color: Colors.white, fontSize: 16, fontWeight: FontWeight.bold),
         ),
         actions: [
@@ -453,7 +453,7 @@ class _ProductScanScreenState extends ConsumerState<ProductScanScreen>
                 const Align(
                   alignment: Alignment.centerLeft,
                   child: Text(
-                    '⚡ តេស្តស្កេនរហ័ស (Quick Demo Codes):',
+                    '⚡ តេស្តស្កេនរហ័ស:',
                     style: TextStyle(
                       color: Colors.white70,
                       fontWeight: FontWeight.bold,

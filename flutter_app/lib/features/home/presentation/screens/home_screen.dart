@@ -310,7 +310,7 @@ class HomeScreen extends ConsumerWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   const Text(
-                    'ប្រភេទមុខម្ហូប (Categories)',
+                    'ប្រភេទមុខម្ហូប',
                     style: TextStyle(
                       fontSize: 16,
                       fontWeight: FontWeight.bold,
@@ -319,7 +319,7 @@ class HomeScreen extends ConsumerWidget {
                   ),
                   TextButton(
                     onPressed: () => context.push('/catalog'),
-                    child: const Text('មើលទាំងអស់ (View All)'),
+                    child: const Text('មើលទាំងអស់'),
                   ),
                 ],
               ),
@@ -379,7 +379,7 @@ class HomeScreen extends ConsumerWidget {
                       Icon(Icons.workspace_premium, color: AppTheme.secondaryColor, size: 22),
                       SizedBox(width: 6),
                       Text(
-                        'មុខម្ហូបលក់ដាច់បំផុត (Popular Specials)',
+                        'មុខម្ហូបលក់ដាច់បំផុត',
                         style: TextStyle(
                           fontSize: 16,
                           fontWeight: FontWeight.bold,
@@ -423,7 +423,7 @@ class HomeScreen extends ConsumerWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   const Text(
-                    'មុខម្ហូបសម្រាប់កម្ម៉ង់ (Menu Catalog)',
+                    'មុខម្ហូបសម្រាប់កម្ម៉ង់',
                     style: TextStyle(
                       fontSize: 16,
                       fontWeight: FontWeight.bold,
@@ -432,7 +432,7 @@ class HomeScreen extends ConsumerWidget {
                   ),
                   TextButton(
                     onPressed: () => context.push('/catalog'),
-                    child: const Text('ចូលកាតាឡុក (Catalog)'),
+                    child: const Text('ចូលកាតាឡុក'),
                   ),
                 ],
               ),
